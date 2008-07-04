@@ -1,0 +1,79 @@
+## Introduction
+- My name
+- What talk is about
+- Audience intro
+  - Who has programmed in Ruby?
+  - Rails?
+  - Written a Rails plugin?
+  - Published that plugin?
+    
+## Ruby on Rails and plugins
+- Introduced in 1.0
+- Way to extract functionality
+- That is easily distributed
+- In 2.0, much core functionality was pulled into plugins
+  - pagination
+  - acts_as plugins
+- Some other functionality was pulled in from plugins
+  - named_scope
+- In 2.1, gem dependencies were introduced
+  - Your Rails app can depend on a gem
+  - Gems can fulfill most of the roles of a plugin
+  - But, same techniques apply to building a gem-based plugin as a standard Rails plugin
+  - Any differences will be pointed out
+  - Major advantage: plugins do not have dependencies; gems do
+    
+## Where do you find plugins?
+- There's not one place
+  - Rails wiki
+    - http://wiki.rubyonrails.org/rails/pages/Plugins
+    - Giant list of sites with plugins
+    - Used by `script/plugin discover`
+    - But lots of out of date information there
+  - My recommendations
+    - Agile Web Development: http://agilewebdevelopment.com/plugins
+    - Core Rails Plugins: http://dev.rubyonrails.org/svn/rails/plugins/
+    - Technoweenie (Rick Olson): http://svn.techno-weenie.net/projects/plugins/
+
+## How do you install plugins?
+- Very simple
+  - From a URL (svn and git work as well): `script/plugin install url`
+  - If you want to install by name:
+    - You need to add the plugin source: `script/plugin source url`
+    - Then you can install by name: `script/plugin source name`
+    - You can check your current sources with `script/plugin sources`
+    - You can remove unwanted sources with `script/plugin unsource url`
+- For gems
+  - Add `config.gem 'gemname'` to `environment.rb`
+  - `rake gems:install` makes sure gems are installed
+  - Better: `rake gems:unpack` unpacks gems in `vendor/gems`
+  - Even better: `rake gems:unpack:dependencies` unpacks gems and their dependencies
+    
+## What types of plugins are there?
+- acts_as_... - adds model capabilities
+  - acts_as_versioned
+  - acts_as_paranoid
+  - acts_as_state_machine
+  - acts_as_taggable_on: http://intridea.com/2008/6/9/acts-as-taggable-on-grows-up
+  
+- ..._fu - adds controller capabilities and backend processing
+  - attachment_fu: http://github.com/technoweenie/attachment_fu/tree/master
+  - GeoKit: http://geokit.rubyforge.org/
+
+- helpers
+  - will_paginate
+  - stickies: http://software.pmade.com/stickies
+  - simple access control: http://mabs29.googlecode.com/svn/trunk/plugins/simple_access_control/
+  - jRails
+
+- testing helpers
+  - shoulda
+  - factory girl: http://giantrobots.thoughtbot.com/2008/6/6/waiting-for-a-factory-girl
+    
+- resourceful plugins - mini-apps
+  - RESTful Authentication
+  - bloget & multibloget
+    
+- plugins that change Rails completely
+  - when: http://giantrobots.thoughtbot.com/2008/2/15/when-rails-plugin
+  - make_resourceful or resource_controller
