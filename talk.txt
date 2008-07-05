@@ -11,6 +11,7 @@
 - Introduced in 1.0
 - Way to extract functionality
 - That is easily distributed
+  - But is useful even if you don't plan to distribute
 - In 2.0, much core functionality was pulled into plugins
   - pagination
   - acts_as plugins
@@ -77,3 +78,20 @@
 - plugins that change Rails completely
   - when: http://giantrobots.thoughtbot.com/2008/2/15/when-rails-plugin
   - make_resourceful or resource_controller
+  
+## What are the parts of a plugin?
+- README
+- init.rb
+- install.rb
+- uninstall.rb
+- Rakefile
+  - tasks internal to the plugin
+- lib/
+  - models
+  - controllers (do we need to explicitly require?)
+  - other
+- tasks/
+  - tasks that show up in Rails' `rake -T`
+- generators/
+  - new generators to make code
+- test/
