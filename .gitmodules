@@ -1,0 +1,30 @@
+[submodule "foreign_key_migrations"]
+	path = foreign_key_migrations
+	url = git@github.com:vigetlabs/foreign_key_migrations.git
+[submodule "restful-authentication"]
+	path = restful-authentication
+	url = git://github.com/technoweenie/restful-authentication.git
+[submodule "exception_notification"]
+	path = exception_notification
+	url = git://github.com/rails/exception_notification.git
+[submodule "acts_as_versioned"]
+	path = acts_as_versioned
+	url = git://github.com/technoweenie/acts_as_versioned.git
+[submodule "acts_as_paranoid"]
+	path = acts_as_paranoid
+	url = git://github.com/technoweenie/acts_as_paranoid.git
+[submodule "ssl_requirement"]
+	path = ssl_requirement
+	url = git://github.com/rails/ssl_requirement.git
+[submodule "acts-as-taggable-on"]
+	path = acts-as-taggable-on
+	url = git://github.com/mbleigh/acts-as-taggable-on.git
+[submodule "shoulda"]
+	path = shoulda
+	url = git://github.com/thoughtbot/shoulda.git
+[submodule "jrails"]
+	path = jrails
+	url = git://github.com/aaronchi/jrails.git
+[submodule "resource_controller"]
+	path = resource_controller
+	url = git://github.com/giraffesoft/resource_controller.git

@@ -1,6 +1,6 @@
 ## Introduction
 - My name
-- What talk is about
+- What this talk is about
 - Audience intro
   - Who has programmed in Ruby?
   - Rails?
@@ -60,6 +60,7 @@
 - ..._fu - adds controller capabilities and backend processing
   - attachment_fu: http://github.com/technoweenie/attachment_fu/tree/master
   - GeoKit: http://geokit.rubyforge.org/
+  - ssl_requirement
 
 - helpers
   - will_paginate
@@ -79,6 +80,8 @@
   - when: http://giantrobots.thoughtbot.com/2008/2/15/when-rails-plugin
   - make_resourceful or resource_controller
   
+- plugins that change the behavior of other plugins
+  
 ## What are the parts of a plugin?
 - README
 - init.rb
@@ -95,3 +98,37 @@
 - generators/
   - new generators to make code
 - test/
+- anything else you want to add
+
+## How do you create a plugin?
+- script/plugin generate (?)
+- modules 
+  - namespacing
+  - including and extending
+- alias_method_chain
+- plugin initialization order: http://weblog.techno-weenie.net/2007/1/24/understanding-the-rails-initialization-process
+
+### init, install, and uninstall
+
+### models
+- subclassing
+- including modules
+  
+### controllers
+
+### views
+
+## How do you add a new generator?
+
+## How do you add new tasks?
+
+## How do you test a plugin?
+- plugins do not reload
+
+## How do you package your plugin as a gem?
+
+## Walk through RESTful Authentication
+
+## Walk through Exception Notification
+
+## Walk through ForeignKeyMigrations
