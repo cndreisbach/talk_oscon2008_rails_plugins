@@ -1,4 +1,4 @@
-## Introduction
+## Introduction (5)
 - My name
 - What this talk is about
 - Audience intro
@@ -7,7 +7,7 @@
   - Written a Rails plugin?
   - Published that plugin?
     
-## Ruby on Rails and plugins
+## Ruby on Rails and plugins (5)
 - Introduced in 1.0
 - Way to extract functionality
 - That is easily distributed
@@ -24,7 +24,7 @@
   - Any differences will be pointed out
   - Major advantage: plugins do not have dependencies; gems do
     
-## Where do you find plugins?
+## Where do you find plugins? (5)
 - There's not one place
   - Rails wiki
     - http://wiki.rubyonrails.org/rails/pages/Plugins
@@ -36,7 +36,7 @@
     - Core Rails Plugins: http://dev.rubyonrails.org/svn/rails/plugins/
     - Technoweenie (Rick Olson): http://svn.techno-weenie.net/projects/plugins/
 
-## How do you install plugins?
+## How do you install plugins? (10)
 - Very simple
   - From a URL (svn and git work as well): `script/plugin install url`
   - If you want to install by name:
@@ -44,6 +44,8 @@
     - Then you can install by name: `script/plugin source name`
     - You can check your current sources with `script/plugin sources`
     - You can remove unwanted sources with `script/plugin unsource url`
+    - `script/plugin discover` scrapes Rails wiki
+      - for all URLs that contain the word plugins
 - For gems
   - Add `config.gem 'gemname'` to `environment.rb`
   - `rake gems:install` makes sure gems are installed
@@ -73,6 +75,8 @@
   - factory girl: http://giantrobots.thoughtbot.com/2008/6/6/waiting-for-a-factory-girl
     
 - resourceful plugins - mini-apps
+  - Savage Beast: http://code.google.com/p/savage-beast-2/
+  - Comatose
   - RESTful Authentication
   - bloget & multibloget
     
