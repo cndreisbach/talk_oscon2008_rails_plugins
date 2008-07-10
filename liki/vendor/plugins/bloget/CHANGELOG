@@ -1,0 +1,14 @@
+Fri Sep 28 2007   Clinton R. Nixon  <clinton.nixon@viget.com>
+
+    * Blog posts use permalinks now
+    * Blog posts have a status
+
+Fri Sep 7 2007    Clinton R. Nixon  <clinton@viget.com>
+
+    * Nesting changed to only be two deep
+    * Unit tests added
+
+Thu Sep 6 2007    Clinton R. Nixon  <clinton.nixon@viget.com>
+
+    * Initial check-in
+    

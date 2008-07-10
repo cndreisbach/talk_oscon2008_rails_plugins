@@ -1,0 +1,9 @@
+<h1>Edit post</h1>
+
+<%= error_messages_for :post %>
+
+<% form_for(:post, :url => post_url(@post), :html => {:method => 'put'}) do |form| %>
+  <%= render :partial => 'form', :object => form, :locals => {:post => @post} %>
+    
+  <%= submit_tag "Update post" %>
+<% end %>

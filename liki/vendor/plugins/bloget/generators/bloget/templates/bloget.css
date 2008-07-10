@@ -1,0 +1,58 @@
+html {
+  background-color: #DDF;
+}
+
+body {
+  width: 700px;
+  margin: 30px auto;
+  font-family: sans-serif;
+  border: 3px solid #99F;
+  background-color: #FFF;
+}
+
+#bloget {
+  padding: 20px;
+  padding-top: 10px;
+  border-top: 0;
+}
+
+#bloget h1 {
+  font-size: 200%;
+}
+
+#bloget h1, #bloget h2, #bloget h3 {
+  font-family: "helvetica neue", arial, sans-serif;
+}
+
+#bloget div {
+  margin: 5px 0;
+}
+
+#bloget .content {
+  margin-bottom: 10px;
+}
+
+#bloget .attribution {
+  font-size: 80%;
+}
+
+#bloget ul.horizontal-menu {
+  padding: 3px 1px;
+  background-color: #DDD;
+}
+
+#bloget ul.horizontal-menu li {
+  display: inline;
+  list-style-type: none;
+  padding-right: 20px;
+}
+
+#bloget form div.field {
+  padding: 5px 0;
+  margin-bottom: 10px;
+}
+
+#bloget .comment {
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}

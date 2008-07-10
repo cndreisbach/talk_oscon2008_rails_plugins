@@ -1,0 +1,9 @@
+<h1>New comment</h1>
+
+<%= error_messages_for :comment %>
+
+<% form_for(:comment, :url => comments_url(:post_id => @comment.post)) do |form| %>
+  <%= render :partial => 'form', :object => form %>
+  
+  <%= submit_tag "Create comment"  %>
+<% end %>

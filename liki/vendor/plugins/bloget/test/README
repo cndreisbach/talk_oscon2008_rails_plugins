@@ -1,0 +1,3 @@
+Tests are generated and put into your application.
+
+With an app created as a plugin, this is the best way we currently know to test Bloget.

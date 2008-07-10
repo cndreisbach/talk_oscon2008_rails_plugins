@@ -1,0 +1,9 @@
+<h1>New post</h1>
+
+<%= error_messages_for :post %>
+
+<% form_for(:post, :url => posts_url) do |form| %>
+  <%= render :partial => 'form', :object => form, :locals => {:post => @post} %>
+  
+  <%= submit_tag "Create post"  %>
+<% end %>

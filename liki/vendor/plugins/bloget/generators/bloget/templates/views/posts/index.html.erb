@@ -1,0 +1,23 @@
+<h1><%= @blog.name %></h1>
+
+<% if logged_in? && Blogger.valid_blogger?(current_user) %>
+  <ul class="horizontal-menu">
+    <li><%= link_to "Create post", new_post_url %></li>
+  </ul>    
+<% end %>
+
+<% @posts.each do |post| %>
+  <div class="post <%= post.state %>">
+    <a name="post_<%= post.id %>"></a>
+    <h2>
+      <%= link_to post.display_title, post_url(post) %>
+    </h2>    
+    
+    <%= render :partial => "post", :object => post %>
+    
+  </div>
+<% end %>
+
+<% if self.respond_to?(:will_paginate) %>
+  <%= will_paginate @posts %>
+<% end %>

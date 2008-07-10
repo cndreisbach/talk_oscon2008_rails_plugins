@@ -1,0 +1,60 @@
+= Bloget
+
+(rhymes with blasé)
+
+Bloget is a plugin application that gives you a simple weblog.
+
+When you install Bloget, some lightweight controllers, models, and views will be copied into your Rails application. You will most likely override things in these models and controllers and edit these views.
+
+Bloget uses polymorphic associations for its idea of a +poster+, or an object that can make weblog posts and comments. This is so you can easily integrate it into your application.
+
+== Requirements
+
+=== Edge Rails
+
+Bloget requires Edge Rails. It is being developed on revision 7661 currently, although it is known to work with revisions at least two weeks before that.
+
+=== Other plugins
+
+Bloget does not require any other plugins. However, some are useful.
+
+You need some way to handle authentication. The RESTful Authentication plugin will work for this seamlessly. If you use something else, you must define the methods +logged_in?+ and +current_user+ in +ApplicationController+. +current_user+ must return an object that can match up with Bloget's +poster+ object.
+
+The Will Paginate plugin is also not necessary, but very useful. Bloget will detect it and paginate.
+
+== Integration
+
+=== Integrating with a user model
+
+In your user model:
+
+    has_one :blogger, :as => :poster
+    has_many :posts, :as => :poster
+    has_many :comments, :as => :poster
+    
+=== Templates
+
+By default, the controllers specify a layout of "bloget," which is installed with Bloget. You can override this in the copied controllers.
+
+This layout references +bloget.css+, which is installed in your +public/stylesheets+ directory.
+
+=== Routes
+
+You will need to add these routes, or routes like them, to +config/routes.rb+:
+
+    map.with_options :controller => 'posts', :conditions => {:method => :get} do |bloget|
+      bloget.blog '/blog', :action => 'index'
+      bloget.formatted_blog '/blog.:format', :action => 'index'
+    end
+
+    map.resources(:posts)
+    map.resources(:comments, :path_prefix => '/posts/:post_id')
+    
+Note that Bloget relies on named routes, and so you must have routes named in this fashion. Specifically, this won't work:
+
+    map.resources :posts do |post|
+      post.resources :comments
+    end
+
+
+Copyright (c) 2007 Clinton R. Nixon of Viget Labs, released under the MIT license

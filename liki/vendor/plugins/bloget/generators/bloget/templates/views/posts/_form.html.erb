@@ -1,0 +1,38 @@
+<div class="field">
+  <label for="post_title">Title:</label><br />
+  <%= form.text_field :title %>
+</div>
+
+<div class="field">
+  <label for="post_permalink">Permalink:</label><br />
+  <%= form.text_field :permalink, :disabled => !post.new_record? %>
+</div>
+
+<div class="field">
+  <label for="post_state">State:</label><br />
+  <% Post.states.each do |state| %>
+    <%= form.radio_button :state, state %> <%= state.to_s.capitalize %><br />
+  <% end %>
+</div>
+
+<div class="field">
+  <label for="post_content">Content:</label><br />
+  <%= form.text_area :content %>
+</div>
+
+<script type="text/javascript">
+  create_permalink = function (s) {
+    s = s.replace(/\W+/g, ' ') // all non-word chars to spaces
+    s = s.replace(/^\s+|\s+$/g, ''); // trim leading/trailing spaces
+    s = s.replace(/\s+/g, '-'); // spaces to dashes
+    s = s.toLowerCase();
+    return s.substring(0, 255);
+  }
+  
+  $('post_title').observe('keyup', function (event) {
+    permalink = $('post_permalink');
+    if (!permalink.disabled) {
+      $('post_permalink').value = create_permalink(this.value);
+    }
+  });
+</script>

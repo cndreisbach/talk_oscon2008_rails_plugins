@@ -1,0 +1,10 @@
+<h1>Edit comment</h1>
+
+<%= error_messages_for :comment %>
+
+<% form_for(:comment, :url => comment_url(@comment.post, @comment), :html => {:method => 'put'}) do |form| %>
+  
+  <%= render :partial => 'form', :object => form %>
+  
+  <%= submit_tag "Update comment" %>
+<% end %>
