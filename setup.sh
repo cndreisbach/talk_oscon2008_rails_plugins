@@ -15,3 +15,4 @@ script/plugin install git://github.com/thoughtbot/shoulda.git
 script/plugin install http://svn.rubyonrails.org/rails/plugins/ssl_requirement/
 script/plugin install http://pmade.com/svn/oss/stickies/trunk
 script/generate plugin test_plugin
+cp ../webmate script/webmate
