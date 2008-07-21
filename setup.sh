@@ -8,7 +8,7 @@ script/plugin install http://elitists.textdriven.com/svn/plugins/acts_as_state_m
 script/plugin install git://github.com/technoweenie/acts_as_versioned.git
 script/plugin install git://github.com/vigetlabs/bloget.git
 script/plugin install git://github.com/rails/exception_notification.git
-script/plugin install git://github.com/vigetlabs/foreign_key_migrations.git
+script/plugin install git://github.com/crnixon/foreign_key_migrations.git
 script/plugin install git://github.com/aaronchi/jrails.git
 svn export http://pseudocursors.rubyforge.org/svn/tags/stable/ vendor/plugins/pseudocursors
 script/plugin install git://github.com/jnewland/resource_this.git
